@@ -1,4 +1,4 @@
-export async function getStaticProps(){
+export async function getServerSideProps(){
     // Servidor enviando dados para o cliente
     const resp = await fetch('http://localhost:3000/api/produtos2')
     const produtos = await resp.json()
@@ -10,7 +10,7 @@ export async function getStaticProps(){
     }
 }
 
-export default function Estatico4(props){
+export default function Dinamico2(props){
     // Renderizando no lado do cliente
     function renderizar(){
         return props.produtos.map(produto => {
@@ -23,7 +23,7 @@ export default function Estatico4(props){
 
     return (
         <div>
-            <h1>Estatico #04</h1>
+            <h1>Dinâmico #02</h1>
             <ul style={{marginTop: "30px"}}>
                 {renderizar()}
             </ul>
